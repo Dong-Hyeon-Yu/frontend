@@ -53,7 +53,7 @@
                 </v-flex>
 
                 <v-flex class="mt-4 mb-4">
-                    <Home/>>
+                    <Login/>>
                     
                 </v-flex>
 
@@ -80,14 +80,14 @@
 
 <script>
 import Popup from './Popup.vue' // 내가 사용하고자 하는 js 문서를 import 하기
-import Home from './Home.vue'
+import Login from './Login.vue'
 
 export default {
     data:() =>({
         
         drawer: true,
         links: [
-            {icon: 'dashboard', text:'Dashboard', route:'/'},
+            {icon: 'dashboard', text:'Main', route:'/'},
             {icon: 'folder', text:'My Project', route:'/project'},
             {icon: 'person', text:'Team', route:'/team'},
             {icon: 'lock', text:'Home', route:'/home'}
@@ -95,7 +95,7 @@ export default {
     }),
     components :{
         Popup,
-        Home
+        Login
     }
 }
 </script>
