@@ -39,28 +39,77 @@
                        </div>
                        <h4 class="text-center mlt-4">Ensure your email for registration</h4>
                        <v-form>
+
+
+
+
+                         <div class="protected" v-if="loginSuccess">
+                          <h1>
+                         <b-badge variant="success">보안 사이트에 대한 액세스가 허용되었습니다</b-badge>
+                          </h1>
+                          <h5>로그인 성공!</h5>
+                          </div>
+
+                          <div class="unprotected" v-else-if="loginError">
+                            <h1>
+                             <b-badge variant="danger">이 페이지에 대한 접근 권한이 없습니다.</b-badge>
+                             </h1>
+                                <h5>로그인 실패!</h5>
+                              </div>
+
+                              <div class="unprotected" v-else>
+                              <h1>
+                            <b-badge  variant="info">
+                              <p></p>
+                              <p class="text-center"> 로그인해주세요 </p>
+                              </b-badge>
+                            </h1>
+                            <h5 class = "text-center">로그인 하지 않았습니다. 로그인을 해주세요</h5>
+                              </div>
+
+
+
+
+
+            
+           <form @submit.prevent="login()">  <!-- login 부분 -->
                          <v-text-field
+                         type="text"
+                         placeholder="username"
+                         v-model="user"
+
                          label="Email"
                          name="Email"
                          prepend-icon="email"
-                         type="text"
                          color="teal accent-3"
                          :rules="inputRules"
                          > </v-text-field>
+
+
+
+
                          <v-text-field
+                         type="password"
+                         placeholder="password" 
+                         v-model="password"
+                         
                          id="password"
                          label="Password"
                          name="Password"
                          prepend-icon="lock"
-                         type="password"
                          color="teal accent-3"
                          :rules="inputRules" ></v-text-field>
 
+                </form>
                        </v-form>
+
+
                        <h3 class="text-center mt-2">Forget your password ? </h3>
                      </v-card-text>
                      <div class="text-center mt-3">
-                       <v-btn rounded color="teal lighten-3" dark>SIGN IN</v-btn> 
+                       <v-btn variant="success" type="submit" rounded color="teal lighten-3" dark>SIGN IN</v-btn> 
+                        <p v-if="error" class="error">Bad login information</p>
+
                        <v-btn rounded color="blue darken-1" text @click="dialog = false">Close</v-btn>
                      </div>
                      <h3 class="text-center mt-5"> </h3>
