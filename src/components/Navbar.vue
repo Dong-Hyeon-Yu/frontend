@@ -1,4 +1,4 @@
-<template>
+<template> <!-- -->
 
     <nav>
         <v-app-bar color="grey lighten-1" dark app> <!-- 상단바 설정. dark app 사용하면 흰색글씨 나오고 안쓰면 검정글씨 나옴 -->
