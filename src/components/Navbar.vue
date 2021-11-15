@@ -1,7 +1,7 @@
 <template>
 
     <nav>
-        <v-app-bar color="teal darken-1" dark app> <!-- 상단바 설정. dark app 사용하면 흰색글씨 나오고 안쓰면 검정글씨 나옴 -->
+        <v-app-bar color="grey lighten-1" dark app> <!-- 상단바 설정. dark app 사용하면 흰색글씨 나오고 안쓰면 검정글씨 나옴 -->
             <v-app-bar-nav-icon @click.stop="drawer =!drawer">
 
             </v-app-bar-nav-icon>
@@ -39,7 +39,7 @@
             </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" dark app class="teal lighten-2"> <!-- 왼쪽 메뉴 -->
+        <v-navigation-drawer v-model="drawer" dark app class="grey darken-4"> <!-- 왼쪽 메뉴 -->
             <v-layout column align-center>
                 <v-flex class="mt-5">
                     <v-avater size="100">
@@ -88,9 +88,9 @@ export default {
         drawer: true,
         links: [
             {icon: 'dashboard', text:'Main', route:'/'},
-            {icon: 'folder', text:'My Project', route:'/project'},
-            {icon: 'person', text:'Team', route:'/team'},
-            {icon: 'lock', text:'Home', route:'/home'}
+            {icon: 'lock', text:'Setting', route:'/project'},
+            //{icon: 'person', text:'Team', route:'/team'},
+            //{icon: 'lock', text:'Home', route:'/home'}
         ]
     }),
     components :{

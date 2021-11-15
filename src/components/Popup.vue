@@ -1,4 +1,4 @@
-<template>
+<template> <!-- 상품 등록 --> 
   <v-row justify="center">
     <v-dialog v-model="dialog" persistent max-width="800px"> <!-- 경고창 -->
       <template v-slot:activator="{ on }"> <!-- on 은 액션창 생성 명령어 --> 
@@ -11,8 +11,10 @@
          <v-form class="px-3" ref="form">
         <v-card-text>
            
-                <v-text-field label="Title" v-model="title" prepend-icon="folder" :rules="inputRules"></v-text-field>
-                <v-textarea label="Information" v-model="content" prepend-icon="edit" :rules="inputRules"></v-textarea>
+                <v-text-field label="상호명" v-model="businessname" prepend-icon="folder" :rules="inputRules"></v-text-field>
+                <v-text-field label="상품이름" v-model="productname" prepend-icon="folder" :rules="inputRules"></v-text-field>
+                <v-text-field label="모델명" v-model="modelname" prepend-icon="folder" :rules="inputRules"></v-text-field>
+                <v-textarea label="설명" v-model="imformation" prepend-icon="edit" :rules="inputRules"></v-textarea>
                 <v-col cols="12" lg="6">
                  <v-menu 
           ref="menu1"
@@ -24,6 +26,9 @@
           min-width="290px"
         > <!-- 달력 보이는 화면 290px 로 맞춤 -->
         
+
+
+
           <template v-slot:activator="{ on }"> <!-- 보증기간 선택 달력 -->
             <v-text-field
               v-model="dateFormatted"
@@ -35,6 +40,8 @@
               v-on="on"
             ></v-text-field>
           </template>
+
+
           <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
         </v-menu>
         </v-col>
